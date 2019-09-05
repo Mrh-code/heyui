@@ -58,7 +58,7 @@ export default [{
   name: 'AccountBasic',
   component: (resolve) => require(['components/demo-components/account/account'], resolve),
   meta: { title: '个人中心', icon: 'icon-head' }
-}, {
+},{
   path: '/account-setting/',
   name: 'AccountSetting',
   component: (resolve) => require(['components/demo-components/account/account-setting'], resolve),

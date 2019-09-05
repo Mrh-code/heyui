@@ -4,10 +4,10 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
+  state: {//声明变量，在组件中可直接使用
     User: {},
     msgCount: {
-      messages: 2
+      messages: 5
     },
     siderCollapsed: false
   },
@@ -15,7 +15,7 @@ export default new Vuex.Store({
     updateAccount(state, data) {
       state.User = data;
     },
-    updateSiderCollapse(state, isShow) {
+    updateSiderCollapse(state, isShow) {//边栏的数据和是否展示
       setTimeout(() => {
         G.trigger('page_resize');
       }, 600)

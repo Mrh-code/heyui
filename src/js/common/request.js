@@ -13,7 +13,12 @@ const Request = {
   },
   Home: {
     getMessageList() {
-      return Ajax.get(`/home/messages`);
+      return Ajax.get(`/home/messages`);    
+    }
+  },
+  Home1: {
+    getMessageList() {
+      return Ajax.get(`http://wthrcdn.etouch.cn/weather_mini?city=重庆`);
     }
   },
   Login: {

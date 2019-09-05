@@ -90,7 +90,7 @@
   <div class="app-header">
     <div style="width:100px;float:left;"><Button :icon="siderCollapsed ? 'icon-align-right':'icon-align-left'" size="l" noBorder class="font20" @click="siderCollapsed=!siderCollapsed"></Button></div>
     <div class="float-right app-header-info">
-      <AutoComplete :showDropdownWhenNoResult="false" v-model="searchText" config="globalSearch" placeholder="全局搜索.."></AutoComplete>
+      <AutoComplete :showDropdownWhenNoResult="false" v-model="searchText" config="globalSearch" placeholder="Search here..."></AutoComplete>
       <div class="app-header-icon-item" v-tooltip content="系统布局配置" theme="white" @click="showSettingModal">
         <i class="icon-content-left"></i>
       </div>
@@ -120,7 +120,9 @@ export default {
       searchText: '',
       infoMenu: [
         { key: 'info', title: '个人信息', icon: 'h-icon-user' },
-        { key: 'logout', title: '退出登录', icon: 'h-icon-outbox' }
+        { key: 'security', title: '安全设置', icon: 'icon-lock'},
+        { key: 'logout', title: '退出登录', icon: 'h-icon-outbox' },
+        
       ]
     };
   },
@@ -146,8 +148,10 @@ export default {
       if (data == 'logout') {
         Utils.removeLocal('token');
         this.$router.replace({ name: 'Login' });
-      } else {
+      } else if (data == 'info') {
         this.$router.push({ name: 'AccountBasic' });
+      } else if(data == 'security'){
+        this.$router.push({ name: 'SecuritySetting' })
       }
     },
     showSettingModal() {

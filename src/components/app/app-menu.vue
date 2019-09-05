@@ -52,7 +52,7 @@ export default {
       menus: menuConfig
     };
   },
-  watch: {
+  watch: {//路由刷新的时候强制界面刷新
     $route() {
       this.menuSelect();
     }

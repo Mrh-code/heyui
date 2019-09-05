@@ -1,14 +1,31 @@
+// 左侧目录的配置，title是目录显示内容，icon是左侧图标，key是条目对应的值也是路由的值，count数据是未读信息标注
+
 const menuConfig = [
   {
-    title: 'Dashboard',
+    title: '控制面板',
     key: 'Home',
     icon: 'icon-monitor',
     count: 1
   },
   {
-    title: 'Icons',
-    key: 'Icons',
-    icon: 'icon-heart'
+    title: '文件上传',
+    key: 'Fileup',
+    icon: 'icon-upload'
+  },
+  {
+    title: '协议配置',
+    key: 'Assign',
+    icon: 'icon-server'
+  },
+  {
+    title:'首页',
+    key:'Home1',
+    icon:'icon-monitor'
+  },
+  {
+    title:'图标列表',
+    key:'Icons',
+    icon:'icon-grid'
   },
   {
     title: '列表应用',

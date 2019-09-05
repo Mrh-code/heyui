@@ -8,7 +8,11 @@ import store from 'js/vuex/store';
 import 'js/vue/components';
 import 'js/vue/filters';
 
+
+
+
 require('./css/app.less');
+
 
 // 开发环境判断
 // process.env.NODE_ENV == 'development'

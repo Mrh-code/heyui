@@ -103,7 +103,7 @@
   <div class="login-vue">
     <div class="login-container">
       <div class="login-content">
-        <div class="login-title">管理系统</div>
+        <div class="login-title">T-Box管理系统</div>
         <div class="login-name login-input">
           <input type="text" name="username" v-model="login.username" autocomplete="off"/>
           <span class="placeholder" :class="{fixed: login.username != '' && login.username != null}">用户名</span>
@@ -116,7 +116,8 @@
           <Button :loading="loading" block color="primary" size="l" @click="submit">登录</Button>
         </div>
       </div>
-      <p class="copyright"> Copyright © 2019 vvpvvp - <a href="https://www.heyui.top/">heyui.top</a></p>
+
+      <p class="copyright"> Copyright © 2019 重庆邮电大学3017实验室 - <a href="https://www.heyui.top/">heyui.top</a></p>
     </div>
   </div>
 </template>

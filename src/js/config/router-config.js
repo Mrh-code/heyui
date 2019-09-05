@@ -1,3 +1,5 @@
+//路由配置表，在这里设置路由表，其中导入的demoComponents是二级目录的路由配置数据
+
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import demoComponents from './demo-components';
@@ -6,7 +8,7 @@ Vue.use(VueRouter);
 
 const initRouter = () => {
   const routerParam = {
-    mode: 'history',
+    mode: 'history',//这里的mode不知道什么意思
     routes: [{
       path: '/login',
       name: 'Login',
@@ -14,10 +16,10 @@ const initRouter = () => {
     }, {
       path: '/',
       component: (resolve) => require(['components/app/app-frame'], resolve),
-      children: [{
+      children: [{//app-frame里的子路由，在app-frame里的router-view里加载home组件
         path: '',
         name: 'Home',
-        component: (resolve) => require(['components/home/index'], resolve),
+        component: (resolve) => require(['components/home1/index'], resolve),
         meta: { title: '首页', icon: 'icon-monitor' }
       }, {
         path: '/system-error',
@@ -37,6 +39,25 @@ const initRouter = () => {
         meta: { title: '页面找不到' }
       },
       ...demoComponents,
+      //测试路由
+      {
+        path:'/assign',
+        name:'Assign',
+        component: (resolve) => require(['components/assign/assign'], resolve),
+        meta: { title: '协议配置' }
+      },
+      {
+        path:'/fileup',
+        name:'Fileup',
+        component: (resolve) => require(['components/fileUpload/fileupload'], resolve),
+        meta: { title: '文件上传' }
+      },
+      {
+        path:'/home1',
+        name:'Home1',
+        component: (resolve) => require(['components//home/index'], resolve),
+        meta: { title: '首页信息' }
+      },
       {
         path: '*',
         component: (resolve) => require(['components/error-pages/404'], resolve),
@@ -47,6 +68,7 @@ const initRouter = () => {
 
   let router = new VueRouter(routerParam);
 
+  // 这两段router的钩子函数还不清楚有什么用
   router.beforeEach((to, from, next) => {
     HeyUI.$LoadingBar.start();
     if (to.meta && to.meta.title) {

@@ -12,7 +12,7 @@
 }
 </style>
 <template>
-  <div class="app-logo"><router-link to="/">HEYUI ADMIN</router-link></div>
+  <div class="app-logo"><router-link to="/">终端控制台</router-link></div>
 </template>
 <script>
 export default {

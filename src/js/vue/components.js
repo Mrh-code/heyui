@@ -4,6 +4,7 @@ import SearchFilter from 'components/common/search-filter';
 import AItem from 'components/common-item/a-item';
 import BItem from 'components/common-item/b-item';
 
+// vue组件的导入和声明
 Vue.component('SubMenu', SubMenu);
 Vue.component('AItem', AItem);
 Vue.component('BItem', BItem);
